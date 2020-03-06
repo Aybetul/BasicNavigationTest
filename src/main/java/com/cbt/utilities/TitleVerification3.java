@@ -13,14 +13,15 @@ public class TitleVerification3 {
         for (String each : urls) {
 
             driver.get(each);
-
+            System.out.println(driver.getCurrentUrl());
             System.out.println(driver.getCurrentUrl().contains(
-                    (driver.getTitle().replace(" ", "").toLowerCase())) ? driver.getTitle() + " passed" :
+                    (driver.getTitle().replace(" ", "").toLowerCase())) ?
+                    driver.getTitle() + " passed" :
                     driver.getTitle() + " failed");
             driver.close();
              driver = BrowserFactory.getDriver("chrome");
         }
-
+driver.quit();
     }
     }
 
